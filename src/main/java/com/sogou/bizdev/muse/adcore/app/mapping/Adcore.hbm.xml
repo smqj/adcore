@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+   "-//Hibernate/Hibernate Mapping DTD//EN"
+   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sogou.bizdev.muse.adcore.app.po" auto-import="true">
+	<class name="Adcore" table="adcore" mutable="true" dynamic-update="false" dynamic-insert="false" select-before-update="false" lazy="true" abstract="false">
+		<id name="cpcId" type="java.lang.Long">
+			<column name="cpcId" sql-type="bigint(20) unsigned" not-null="true" length="20" />
+			<generator class="identity" />
+		</id>
+		<property name="accountId" type="java.lang.Long">
+			<column name="accountId" sql-type="bigint(20) unsigned" not-null="true" length="20" />
+		</property>
+		<property name="key" type="java.lang.String" insert="true" update="true" lazy="false" optimistic-lock="true">
+			<column name="keyWord" sql-type="varchar(64)" length="64" not-null="true"/>
+		</property>
+		<property name="url" type="java.lang.String" insert="true" update="true" lazy="false" optimistic-lock="true">
+			<column name="url" sql-type="varchar(1024)" length="1024" not-null="false"/>
+		</property>
+		<property name="createDate" type="java.util.Date" insert="true" update="true" lazy="false" optimistic-lock="true">
+			<column name="create_date" sql-type="date" length="10" not-null="true"/>
+		</property>
+		<property name="chgDate" type="java.util.Date" insert="true" update="true" lazy="false" optimistic-lock="true">
+			<column name="chg_date" sql-type="date" length="10" not-null="true"/>
+		</property>
+		<property name="maxPrice" type="java.lang.Integer">
+			<column name="max_price" sql-type="bigint(10) unsigned" not-null="true" length="10" />
+		</property>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+   <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+      <property name="order" value="1" />  
+      <property name="ignoreUnresolvablePlaceholders" value="true" />
+      <property name="locations"> 
+          <list> 
+              <value>classpath:db_config.properties</value>
+          </list> 
+      </property>
+    </bean>
+ 
+   <import resource="classpath:appContext-adcore-db.xml"></import>
+   <import resource="classpath:/com/sogou/bizdev/muse/adcore/app/conf/appContext-app-dao.xml" />
+   <import resource="classpath:/com/sogou/bizdev/muse/adcore/app/conf/appContext-app-service.xml" />
+   <import resource="classpath:appContext-adcore-rmi.xml"></import>
+</beans>

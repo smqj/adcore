@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+  <hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">false</property>
+		<property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property> 
+
+		<!-- example for annotation Entities -->
+		<!--mapping class="com.xxx.xxx.xxx" /-->
+        <!-- example for mappinp file Entities /-->
+        <!--mapping resource="com/xxx/xxx/xxx.hbm.xml"/-->
+        <mapping resource="com/sogou/bizdev/muse/adcore/app/mapping/Adcore.hbm.xml"/>
+        
+        </session-factory>
+</hibernate-configuration>
